@@ -46,6 +46,6 @@ RUN pip install mock grpcio
 #    rm -f /bazel/bazel-$BAZEL_VERSION-installer-linux-x86_64.sh
 RUN pip install tensorflow-serving-api
 RUN echo "deb [arch=amd64] http://storage.googleapis.com/tensorflow-serving-apt stable tensorflow-model-server tensorflow-model-server-universal" |  tee /etc/apt/sources.list.d/tensorflow-serving.list
-RUN curl https://github.com/brandyaptx/tensorflow_serving-docker/raw/master/tensorflow-serving.release.pub.gpg |  apt-key add -
+RUN curl https://raw.githubusercontent.com/brandyaptx/tensorflow_serving-docker/master/tensorflow-serving.release.pub.gpg  |  apt-key add -
 RUN  apt-get update &&  apt-get install tensorflow-model-server-universal
 CMD ["/bin/bash"]
